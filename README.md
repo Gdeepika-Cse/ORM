@@ -1,12 +1,12 @@
 # Ex02 Django ORM Web Application
-## Date: 
-
+# NAME: DEEPIKA G
+# REG.NO: 212224040060
 ## AIM
-To develop a Django application to store and retrieve data from Movies Database using Object Relational Mapping(ORM).
+To develop a Django application to store and retrieve data from Car Inventory Database using Object Relational Mapping(ORM).
 
 ## ENTITY RELATIONSHIP DIAGRAM
 
-
+![alt text](<WhatsApp Image 2025-09-13 at 11.18.53_369173c6.jpg>)
 
 ## DESIGN STEPS
 
@@ -23,13 +23,34 @@ Enter the code for admin.py and models.py
 Execute Django admin and create details for 10 books
 
 ## PROGRAM
+```
+models.py :
+from django.db import models
+
+class CAR(models.Model):
+    car_id = models.AutoField(primary_key=True)
+    brand = models.CharField(max_length=20)
+    model = models.CharField(max_length=20)
+    year = models.DateField()
+    price = models.IntegerField()
 
 
+admin.py:
+from django.contrib import admin
+from . models import CAR
+
+
+# Register your models here.
+admin.site.register(CAR)
+
+class CarAdmin(admin.ModelAdmin):
+    list_display=('car_id','brand','model','year','price')
+
+```
 
 ## OUTPUT
 
-Include the screenshot of your admin page.
-
+![alt text](image.png)
 
 ## RESULT
 Thus the program for creating a database using ORM hass been executed successfully
